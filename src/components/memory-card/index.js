@@ -12,6 +12,7 @@ function createMemoryCard() {
     $memoryCard.classList.add('memory-card');
     $wrapCards.insertBefore($memoryCard, null);
     $memoryCard.insertAdjacentHTML('afterbegin', $iconCollab);
+    onClickEvent($memoryCard);
 }
 
 function createMemoryCardFront() {
@@ -28,4 +29,11 @@ function createMemoryCardFront() {
     $memoryCardFront.classList.add('memory-card', '-front');
     $wrapCards.insertBefore($memoryCardFront, null);
     $memoryCardFront.insertAdjacentHTML('afterbegin', $iconC);
+    onClickEvent($memoryCardFront);
+}
+
+function onClickEvent($element) {
+    $element.addEventListener('click', () => {
+        console.log("Clicado")
+    } );
 }
