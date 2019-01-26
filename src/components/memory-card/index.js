@@ -1,16 +1,5 @@
-const $root = document.querySelector('#root');
-
-for (let i = 0; i < 7; i++) {
+function createMemoryCard() {
     const $memoryCard = document.createElement('article');
-    const $memoryCardFront = document.createElement('article');
-    
-    createMemoryCardElement($memoryCard);
-    if (i == 0) {
-        createMemoryCardFrontElement($memoryCardFront, $memoryCard);
-    }
-}
-
-function createMemoryCardElement($memoryCard) {
 
     const $iconCollab = `
         <img 
@@ -21,13 +10,12 @@ function createMemoryCardElement($memoryCard) {
     `;
 
     $memoryCard.classList.add('memory-card');
-    $root.insertBefore($memoryCard, null);
+    $wrapCards.insertBefore($memoryCard, null);
     $memoryCard.insertAdjacentHTML('afterbegin', $iconCollab);
-
-    return $memoryCard;
 }
 
-function createMemoryCardFrontElement($memoryCardFront, $memoryCard) {
+function createMemoryCardFront() {
+    const $memoryCardFront = document.createElement('article');
 
     const $iconC = `
         <img 
@@ -38,6 +26,6 @@ function createMemoryCardFrontElement($memoryCardFront, $memoryCard) {
     `;
 
     $memoryCardFront.classList.add('memory-card', '-front');
-    $root.insertBefore($memoryCardFront, $memoryCard);
+    $wrapCards.insertBefore($memoryCardFront, null);
     $memoryCardFront.insertAdjacentHTML('afterbegin', $iconC);
 }

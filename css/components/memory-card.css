@@ -1,11 +1,9 @@
 .memory-card {
-    margin-right: 31px;
-    margin-bottom: 16px;
     width: 155px;
     height: 155px;
     background-color: #f25a70;
     border-radius: 30px;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
