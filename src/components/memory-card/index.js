@@ -1,39 +1,33 @@
 function createMemoryCard() {
-    const $memoryCard = document.createElement('article');
-
-    const $iconCollab = `
-        <img 
-            src="img/icon-collabcode.png" 
-            alt="Gueio mascote da CollabCode" 
-            class="icon"
-        />
+    const $memoryCard = `
+        <article class="memory-card">
+            <img 
+                src="img/icon-collabcode.png" 
+                alt="Gueio mascote da CollabCode" 
+                class="icon"
+                onClick="handleClick()"
+            />
+        </article>
     `;
 
-    $memoryCard.classList.add('memory-card');
-    $wrapCards.insertBefore($memoryCard, null);
-    $memoryCard.insertAdjacentHTML('afterbegin', $iconCollab);
-    onClickEvent($memoryCard);
+    return $memoryCard;
 }
 
 function createMemoryCardFront() {
-    const $memoryCardFront = document.createElement('article');
-
-    const $iconC = `
-        <img 
-            src="img/icon-c.png" 
-            alt="Linguagem C++" 
-            class="icon"
-        />
+    const $memoryCard = `
+        <article class="memory-card -front">
+            <img 
+                src="img/icon-c.png" 
+                alt="Gueio mascote da CollabCode" 
+                class="icon"
+                onClick="handleClick()"
+            />
+        </article>
     `;
 
-    $memoryCardFront.classList.add('memory-card', '-front');
-    $wrapCards.insertBefore($memoryCardFront, null);
-    $memoryCardFront.insertAdjacentHTML('afterbegin', $iconC);
-    onClickEvent($memoryCardFront);
+    return $memoryCard;
 }
 
-function onClickEvent($element) {
-    $element.addEventListener('click', () => {
-        console.log("Clicado")
-    } );
+function handleClick() {
+    console.log('se-');
 }
