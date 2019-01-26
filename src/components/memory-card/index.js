@@ -1,4 +1,4 @@
-function createMemoryCard() {
+createMemoryCard = () => {
     const $memoryCard = `
         <article class="memory-card">
             <img 
@@ -11,9 +11,9 @@ function createMemoryCard() {
     `;
 
     return $memoryCard;
-}
+};
 
-function createMemoryCardFront() {
+createMemoryCardFront = () => {
     const $memoryCard = `
         <article class="memory-card -front">
             <img 
@@ -26,7 +26,7 @@ function createMemoryCardFront() {
     `;
 
     return $memoryCard;
-}
+};
 
 function handleClick() {
     console.log('se-');
