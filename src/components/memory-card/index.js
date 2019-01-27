@@ -1,26 +1,23 @@
-createMemoryCard = (isFront) => {   
-    let $articleClass = 'memory-card';
-    let $imgSrc = 'img/icon-collabcode.png';
+const createMemoryCard = () => `
+    <article class="memory-card">
+        <img 
+            src="img/icon-collabcode.png" 
+            alt="Gueio mascote da CollabCode" 
+            class="icon"
+            onClick="handleClick()"
+        />
+    </article>
+`;
 
-    if (isFront) {
-        $articleClass = 'memory-card -front';
-        $imgSrc = 'img/icon-c.png';
-    }
-    
-    const $memoryCard = `
-        <article class="${$articleClass}">
-            <img 
-                src="${$imgSrc}" 
-                alt="Gueio mascote da CollabCode" 
-                class="icon"
-                onClick="handleClick()"
-            />
-        </article>
-    `;
+const createMemoryCardFront = () => `
+    <article class="memory-card -front">
+        <img 
+            src="img/icon-c.png" 
+            alt="Gueio mascote da CollabCode" 
+            class="icon"
+            onClick="handleClick()"
+        />
+    </article>
+`;
 
-    return $memoryCard;
-};
-
-function handleClick() {
-    console.log('se-');
-}
+const handleClick = () => console.log('ae');
