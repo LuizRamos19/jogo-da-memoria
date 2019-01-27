@@ -1,10 +1,12 @@
 function createCardsWrapper() {
     const $cardsWrapper = document.createElement('section');
     $cardsWrapper.classList.add('cards-wrapper');
+    
+    return $cardsWrapper;
+}
 
-    const $head = document.querySelector('head');
-    const $style = document.createElement('style');
-    $style.textContent = `
+const loadCardWrapperStyles = $style => {
+    $style.textContent += `
         .cards-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -16,7 +18,6 @@ function createCardsWrapper() {
             margin-bottom: 10px;
         }
     `;
-    $head.insertBefore($style, null);
-    
-    return $cardsWrapper;
+
+    return $style;
 }

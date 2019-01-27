@@ -1,6 +1,12 @@
 const $root = document.querySelector('#root');
+const $head = document.querySelector('head');
+let $style = document.createElement('style');
 
 const $cardsWrapper = createCardsWrapper();
+
+$style = loadCardWrapperStyles($style);
+$style = loadMemoryCardStyles($style);
+$head.insertBefore($style, null);
 
 const $memoryCard = createMemoryCard({
     src: 'img/icon-collabcode.png', 
