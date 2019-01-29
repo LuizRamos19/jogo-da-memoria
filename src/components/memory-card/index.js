@@ -1,17 +1,7 @@
-const createMemoryCard = ({ src, alt, nameClass }) => `
-    <article class="memory-card ${nameClass}">
-        <img 
-            src="${src}" 
-            alt="${alt}" 
-            class="icon"
-            onClick="handleClick()"
-        />
-    </article>
-`;
-
-const handleClick = () => console.log('ae');
-
-const loadMemoryCardStyles = $style => {
+const memoryCard = () => {
+    const $head = document.querySelector('head');
+    let $style = document.createElement('style');
+    
     $style.textContent += `
         .memory-card {
             width: 155px;
@@ -53,5 +43,17 @@ const loadMemoryCardStyles = $style => {
         }
     `;
 
-    return $style;
-}
+    $head.insertBefore($style, null);
+
+    return ({ src, alt, nameClass }) => `
+        <article class="memory-card ${nameClass}">
+            <img 
+                src="${src}" 
+                alt="${alt}" 
+                class="icon"
+                onClick="handleClick()"
+            />
+        </article>
+    `;
+};
+const handleClick = () => console.log('ae');

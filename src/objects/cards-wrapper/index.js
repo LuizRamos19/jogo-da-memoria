@@ -1,11 +1,9 @@
 function createCardsWrapper() {
     const $cardsWrapper = document.createElement('section');
     $cardsWrapper.classList.add('cards-wrapper');
-    
-    return $cardsWrapper;
-}
 
-const loadCardWrapperStyles = $style => {
+    const $head = document.querySelector('head');
+    let $style = document.createElement('style');
     $style.textContent += `
         .cards-wrapper {
             display: flex;
@@ -19,5 +17,7 @@ const loadCardWrapperStyles = $style => {
         }
     `;
 
-    return $style;
+    $head.insertBefore($style, null);
+    
+    return $cardsWrapper;
 }
