@@ -2,7 +2,7 @@ const memoryCard = () => {
     const $head = document.querySelector('head');
     let $style = document.createElement('style');
     
-    $style.textContent += `
+    $style.textContent = `
         .memory-card {
             width: 155px;
             height: 155px;
