@@ -56,4 +56,16 @@ const memoryCard = () => {
         </article>
     `;
 };
-const handleClick = () => console.log('ae');
+const handleClick = ($src, $alt) => {
+    const imgElement = window.event.srcElement;
+    if (imgElement.parentElement.classList.contains('-front')) {
+        imgElement.setAttribute('onClick', `handleClick('${imgElement.src}', '${imgElement.alt}')`);
+        imgElement.src = 'img/icon-collabcode.png';
+        imgElement.alt = 'Gueio mascote da collabcode';
+        imgElement.parentElement.classList.toggle('-front');
+    } else {
+        imgElement.src = $src;
+        imgElement.alt = $alt;
+        imgElement.parentElement.classList.toggle('-front');
+    }
+} 
