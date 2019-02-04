@@ -61,7 +61,7 @@ const memoryCard = () => {
     $head.insertBefore($style, null);
 
     return ({ src, alt, nameClass }) => `
-        <div class="memory-card -active" onClick="handleClick(this)">
+        <div class="memory-card" onClick="handleClick(this)">
             <article class="card -front">
                 <img 
                     src="${src}" 
@@ -80,5 +80,14 @@ const memoryCard = () => {
     `;
 };
 const handleClick = ($component) => {
-    $component.classList.toggle('-active');
+    let $active = document.querySelectorAll('.-active');
+    $active.length < 2 ? $component.classList.toggle('-active') : null;
+    $active = document.querySelectorAll('.-active');
+    if ($active.length == 2) {
+        setTimeout(() => {
+            $active.forEach(element => {
+                element.classList.toggle('-active');
+            });
+        }, 2000);
+    }
 };
