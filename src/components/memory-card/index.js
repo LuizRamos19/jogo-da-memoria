@@ -6,6 +6,11 @@ const memoryCard = () => {
         .memory-card {
             width: 155px;
             height: 155px;
+            position: relative;
+        }
+        .memory-card .card {
+            width: 100%;
+            height: 100%;
             background-color: #f25a70;
             border-radius: 30px;
             display: flex;
@@ -14,13 +19,23 @@ const memoryCard = () => {
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
             position: relative;
             cursor: pointer;
+            position: absolute;
         }
 
-        .memory-card.-front {
+        .memory-card.-active .card {
+            display: none;
+        }
+
+        .memory-card.-active .card.-front {
+            display: flex;
+        }
+
+        .memory-card .card.-front {
             background-color: #fff;
+            display: flex;
         }
 
-        .memory-card.-front::before {
+        .memory-card .card.-front::before {
             content: "";
             width: 95px;
             height: 95px;
@@ -29,16 +44,16 @@ const memoryCard = () => {
             position: absolute;
         }
 
-        .memory-card > .icon {
+        .memory-card .card > .icon {
             width: 100px;
             height: 100px;
         }
 
-        .memory-card.-front > .icon {
+        .memory-card .card.-front > .icon {
             transform: translateY(-12px);
         }
 
-        .memory-card > .icon {
+        .memory-card .card > .icon {
             position: absolute;
         }
     `;
@@ -46,26 +61,24 @@ const memoryCard = () => {
     $head.insertBefore($style, null);
 
     return ({ src, alt, nameClass }) => `
-        <article class="memory-card ${nameClass}">
-            <img 
-                src="${src}" 
-                alt="${alt}" 
-                class="icon"
-                onClick="handleClick()"
-            />
-        </article>
+        <div class="memory-card -active" onClick="handleClick(this)">
+            <article class="card -front">
+                <img 
+                    src="${src}" 
+                    alt="${alt}" 
+                    class="icon"
+                />
+            </article>
+            <article class="card">
+                <img 
+                    src="img/icon-collabcode.png" 
+                    alt="Gueio mascote da collabcode" 
+                    class="icon"
+                />
+            </article>
+        </div>
     `;
 };
-const handleClick = ($src, $alt) => {
-    const imgElement = window.event.srcElement;
-    if (imgElement.parentElement.classList.contains('-front')) {
-        imgElement.setAttribute('onClick', `handleClick('${imgElement.src}', '${imgElement.alt}')`);
-        imgElement.src = 'img/icon-collabcode.png';
-        imgElement.alt = 'Gueio mascote da collabcode';
-        imgElement.parentElement.classList.toggle('-front');
-    } else {
-        imgElement.src = $src;
-        imgElement.alt = $alt;
-        imgElement.parentElement.classList.toggle('-front');
-    }
-} 
+const handleClick = ($component) => {
+    $component.classList.toggle('-active');
+};
