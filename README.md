@@ -39,3 +39,11 @@ Uma forma simplificada de pegar as chaves de um objeto JSON no JavaScript é usa
 ```
 const { src, alt, nameClass } = card; //a variável card é um JSON
 ```
+
+`Event Bubbling`
+
+Event bubbling ocorre quando um elemento dentro de um elemento pai recebe alguma evento, como o clique por exemplo. Se um elemento filho recebe um evento, o pai sabe que o filho recebeu esse evento e o pai desse pai também, até o pai máximo. Exemplo para pegar uma classe específica ao clicar em um elemento específico dentro do pai:
+
+```
+$origin.closest('-active');
+```

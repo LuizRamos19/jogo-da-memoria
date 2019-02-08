@@ -80,14 +80,19 @@ const memoryCard = () => {
     `;
 };
 const handleClick = ($component) => {
-    let $active = document.querySelectorAll('.-active');
-    $active.length < 2 ? $component.classList.toggle('-active') : null;
-    $active = document.querySelectorAll('.-active');
-    if ($active.length == 2) {
+    if (qtdActiveMemoryCard < 2) {
+        $component.classList.toggle('-active')
+    }
+
+    if (qtdActiveMemoryCard == 1) {
         setTimeout(() => {
-            $active.forEach(element => {
-                element.classList.toggle('-active');
+            const $activeMemoryCards = document.querySelectorAll('.memory-card.-active');
+
+            $activeMemoryCards.forEach($memoryCard => {
+                $memoryCard.classList.toggle('-active');
             });
+
+            qtdActiveMemoryCard = 0;
         }, 2000);
     }
 };
