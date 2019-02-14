@@ -1,4 +1,6 @@
 let qtdActiveMemoryCard = 0;
+let count = 0;
+let activeIcon = '';
 
 function createCardsWrapper() {
     const $cardsWrapper = document.createElement('section');
@@ -23,7 +25,7 @@ function createCardsWrapper() {
     $head.insertBefore($style, null);
 
     $cardsWrapper.addEventListener('click', () => {
-        qtdActiveMemoryCard = $cardsWrapper.querySelectorAll('.memory-card.-active').length;
+        qtdActiveMemoryCard = $cardsWrapper.querySelectorAll('.memory-card.-active:not(.-success)').length;
     });
     
     return $cardsWrapper;

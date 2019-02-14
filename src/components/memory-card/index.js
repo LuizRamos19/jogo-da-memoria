@@ -81,18 +81,29 @@ const memoryCard = () => {
 };
 const handleClick = ($component) => {
     if (qtdActiveMemoryCard < 2) {
+        if (activeIcon == '') {
+            activeIcon = $component.querySelector('.icon').src
+        }
         $component.classList.toggle('-active')
     }
 
     if (qtdActiveMemoryCard == 1) {
-        setTimeout(() => {
-            const $activeMemoryCards = document.querySelectorAll('.memory-card.-active');
-
+        const $activeMemoryCards = document.querySelectorAll('.memory-card.-active:not(.-success)');
+        if ($component.querySelector('.icon').src == activeIcon) {
             $activeMemoryCards.forEach($memoryCard => {
-                $memoryCard.classList.toggle('-active');
+                $memoryCard.classList.add('-success');
             });
-
-            qtdActiveMemoryCard = 0;
-        }, 2000);
+            count++;
+        } else {
+            setTimeout(() => {
+                $activeMemoryCards.forEach($memoryCard => {
+                    $memoryCard.classList.toggle('-active');
+                });
+    
+                qtdActiveMemoryCard = 0;
+            }, 2000);
+        }
+        activeIcon = '';
+        console.log("Quantidade de acertos", count)
     }
 };
