@@ -80,18 +80,21 @@ const memoryCard = () => {
     `;
 };
 
-let score = 0;
-
 const handleClick = ($component) => {
     if (!$component.classList.contains('-active')) {
-        if (qtdActiveMemoryCard < 2) {
+        $component.classList.toggle('-active')
+        getQtdActiveMemoryCard();
+
+        if (qtdActiveMemoryCard > 2) {
             $component.classList.toggle('-active')
         }
-    
-        if (qtdActiveMemoryCard == 1) {
-            const $memoryCards = document.querySelectorAll('.memory-card.-active');
 
-            if ($memoryCards[0].querySelector('.-front .icon').getAttribute('src') == $memoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
+        if (qtdActiveMemoryCard == 2) {
+            const $memoryCards = document.querySelectorAll('.memory-card.-active');
+            let srcFirstCard = $memoryCards[0].querySelector('.-front .icon').getAttribute('src');
+            let srcSecondCard = $memoryCards[1].querySelector('.-front .icon').getAttribute('src');
+
+            if (srcFirstCard == srcSecondCard) {
                 $memoryCards.forEach($memoryCard => {
                     $memoryCard.classList.add('-score');
                     $memoryCard.classList.remove('-active');
