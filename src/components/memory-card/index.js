@@ -22,11 +22,11 @@ const memoryCard = () => {
             position: absolute;
         }
 
-        .memory-card.-active .card {
+        .memory-card.-active .card, .memory-card.-score .card {
             display: none;
         }
 
-        .memory-card.-active .card.-front {
+        .memory-card.-active .card.-front, .memory-card.-score .card.-front {
             display: flex;
         }
 
@@ -79,31 +79,34 @@ const memoryCard = () => {
         </div>
     `;
 };
-const handleClick = ($component) => {
-    if (qtdActiveMemoryCard < 2) {
-        if (activeIcon == '') {
-            activeIcon = $component.querySelector('.icon').src
-        }
-        $component.classList.toggle('-active')
-    }
 
-    if (qtdActiveMemoryCard == 1) {
-        const $activeMemoryCards = document.querySelectorAll('.memory-card.-active:not(.-success)');
-        if ($component.querySelector('.icon').src == activeIcon) {
-            $activeMemoryCards.forEach($memoryCard => {
-                $memoryCard.classList.add('-success');
-            });
-            count++;
-        } else {
-            setTimeout(() => {
-                $activeMemoryCards.forEach($memoryCard => {
-                    $memoryCard.classList.toggle('-active');
-                });
-    
-                qtdActiveMemoryCard = 0;
-            }, 2000);
+let score = 0;
+
+const handleClick = ($component) => {
+    if (!$component.classList.contains('-active')) {
+        if (qtdActiveMemoryCard < 2) {
+            $component.classList.toggle('-active')
         }
-        activeIcon = '';
-        console.log("Quantidade de acertos", count)
+    
+        if (qtdActiveMemoryCard == 1) {
+            const $memoryCards = document.querySelectorAll('.memory-card.-active');
+
+            if ($memoryCards[0].querySelector('.-front .icon').getAttribute('src') == $memoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
+                $memoryCards.forEach($memoryCard => {
+                    $memoryCard.classList.add('-score');
+                    $memoryCard.classList.remove('-active');
+                });
+                score++;
+            } else {
+                setTimeout(() => {
+                    $memoryCards.forEach($memoryCard => {
+                        $memoryCard.classList.toggle('-active');
+                    });
+        
+                    qtdActiveMemoryCard = 0;
+                }, 1500);   
+            }
+            console.log("Quantidade de acertos", score)
+        }
     }
 };
