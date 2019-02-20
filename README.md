@@ -47,3 +47,12 @@ Event bubbling ocorre quando um elemento dentro de um elemento pai recebe alguma
 ```
 $origin.closest('-active');
 ```
+
+
+`IIEF - Immediately Invoked Function Expression`
+
+Para deixar as variáveis como privadas para que não seja possível acessar pelo console do navegador, é necessário usar o IIEF que é uma função que é automaticamente invocada por ela mesma e não possue nome. Para declarar e executar basta escrever o seguinte código.
+
+```
+(function () {})(); //o parênteses do final executa a função
+```
