@@ -2,9 +2,9 @@
     const $root = document.querySelector('#root');
 
     const $cardsWrapper = createCardsWrapper();
-
     const createMemoryCard = memoryCard.create();
 
+    const $pointBar = pointBar.create();
     const $memoryCardWoman = createMemoryCard({
         src: 'img/icon-woman.png', 
         alt: 'Mulher codando'
@@ -31,5 +31,6 @@
     $cardsWrapper.insertAdjacentHTML('beforeend', $memoryCardPHP);
     $cardsWrapper.insertAdjacentHTML('beforeend', $memoryCardC);
 
+    $root.insertAdjacentHTML('afterbegin', $pointBar);
     $root.insertAdjacentElement('beforeend', $cardsWrapper);
 })();
