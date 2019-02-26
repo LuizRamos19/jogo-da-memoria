@@ -231,6 +231,7 @@ const memoryCard = (function() {
             const $memoryCards = document.querySelectorAll('.memory-card.-active');
             let srcFirstCard = $memoryCards[0].querySelector('.-front .icon').getAttribute('src');
             let srcSecondCard = $memoryCards[1].querySelector('.-front .icon').getAttribute('src');
+            let $scoreNumber = document.querySelector('.point-bar > .number');
 
             if (srcFirstCard == srcSecondCard) {
                 $memoryCards.forEach($memoryCard => {
@@ -247,7 +248,7 @@ const memoryCard = (function() {
                     qtdActiveMemoryCard = 0;
                 }, 1500);   
             }
-            console.log("Quantidade de acertos", store.score)
+            $scoreNumber.textContent = `${store.score}`;
         }
     }
 
