@@ -5,6 +5,7 @@
     const createMemoryCard = memoryCard.create();
 
     const $pointBar = pointBar.create();
+    const $startButton = startButton.create();
     const $memoryCardWoman = createMemoryCard({
         src: 'img/icon-woman.png', 
         alt: 'Mulher codando'
@@ -32,5 +33,6 @@
     $cardsWrapper.insertAdjacentHTML('beforeend', $memoryCardC);
 
     $root.insertAdjacentHTML('afterbegin', $pointBar);
+    $root.insertAdjacentHTML('afterend', $startButton);
     $root.insertAdjacentElement('beforeend', $cardsWrapper);
 })();
