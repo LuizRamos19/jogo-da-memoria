@@ -5,13 +5,17 @@ const shadowGame = (function () {
         const $head = document.querySelector('head');
         const $style = document.createElement('style');
         $style.textContent = `
-            .shadow-game.-enabled {
+            .shadow-game {
                 position: fixed;
                 width: 100%;
                 height: 100%;
                 top: 0;
                 background-color: #000;
                 opacity: 0.5;
+            }
+            .shadow-game.-disabled {
+                opacity: 0;
+                transition: all 500ms linear;
             }
         `;
 
@@ -22,7 +26,7 @@ const shadowGame = (function () {
         module._style();
 
         return `
-            <div class="shadow-game -enabled"></div>
+            <div class="shadow-game"></div>
         `;
     }
 
