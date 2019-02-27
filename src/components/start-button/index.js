@@ -5,7 +5,7 @@ const startButton = (function () {
         const $head = document.querySelector('head');
         const $style = document.createElement('style');
         $style.textContent = `
-            .start-button {
+            .start-button.-enabled {
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
@@ -30,11 +30,19 @@ const startButton = (function () {
         module._style();
 
         return `
-            <button class="start-button">Start</button>
+            <button class="start-button -enabled" onClick="startButton.handleClick()">Start</button>
         `;
     }
 
+    module.handleClick = () => {
+        document.querySelector('.shadow-game').classList.remove('-enabled');
+        setTimeout(() => {
+            document.querySelector('.start-button').classList.remove('-enabled');
+        }, 500);
+    }
+
     return {
-        create: module.create
+        create: module.create,
+        handleClick: module.handleClick
     }
 })();
