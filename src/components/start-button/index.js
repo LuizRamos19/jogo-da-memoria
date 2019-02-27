@@ -6,17 +6,20 @@ const startButton = (function () {
         const $style = document.createElement('style');
         $style.textContent = `
             .start-button {
-                position: fixed;
-                bottom: 0;
-                width: 50%;
-                transform: translateY(-20px);
-                border: none;
-                margin-left: 25%;
-
-                background-color: #3a4042;
-                height: 40px;
-                text-align: center;
-                font-family: "Comfortaa", sans-serif;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #2ed573;
+                border: 3px solid #fffcee;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 1.1em;
+                cursor: pointer;
+                box-shadow: 0 4px 8px #3a4042;
             }
         `;
 
