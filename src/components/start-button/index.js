@@ -20,10 +20,10 @@ const startButton = (function () {
                 font-size: 1.1em;
                 cursor: pointer;
                 box-shadow: 0 4px 8px #3a4042;
+                transition: opacity 200ms linear;
             }
             .start-button.-disabled {
                 opacity: 0;
-                transition: all 1000ms linear;
             }
         `;
 
