@@ -30,20 +30,12 @@ const startButton = (function () {
         $head.insertBefore($style, null);
     }
 
-    module.create = () => {
+    module.create = content => {
         module._style();
 
         return `
-            <button class="start-button" onClick="startButton.handleClick()">Start</button>
+            <button class="start-button">${content}</button>
         `;
-    }
-
-    module.handleClick = () => {
-        document.querySelector('.shadow-game').classList.add('-disabled');
-        setTimeout(() => {
-            document.querySelector('.start-button').classList.add('-disabled');
-            document.querySelector('.shadow-game').classList.add('-disabled');
-        }, 500);
     }
 
     return {

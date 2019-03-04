@@ -1,19 +1,20 @@
-const shadowGame = (function () {
+const transparencyLayer = (function () {
     const module = {};
 
     module._style = function () {
         const $head = document.querySelector('head');
         const $style = document.createElement('style');
+        // 100 vh = % viewport height
+        // 100 vw = % viewport width
         $style.textContent = `
-            .shadow-game {
+            .transparency-layer {                
+                background-color: rgba(58, 64, 66, 0.5);
                 position: fixed;
-                width: 100%;
-                height: 100%;
+                height: 100vh;
+                width: 100vw;
                 top: 0;
-                background-color: #000;
-                opacity: 0.5;
             }
-            .shadow-game.-disabled {
+            .transparency-layer.-disabled {
                 opacity: 0;
                 transition: all 500ms linear;
             }
@@ -22,15 +23,15 @@ const shadowGame = (function () {
         $head.insertBefore($style, null);
     }
 
-    module.create = () => {
+    module.render = () => {
         module._style();
 
         return `
-            <div class="shadow-game"></div>
+            <div class="transparency-layer"></div>
         `;
     }
 
     return {
-        create: module.create
+        render: module.render
     }
 })();
