@@ -23,8 +23,7 @@ const startButton = (function () {
                 transition: all 200ms linear;
             }
             .start-button.-disabled {
-                transform: scale(2.5);
-                transform-origin: 50% 50%;
+                transform: translate(-50%, -35%) scale(2.5);
                 opacity: 0;
             }
         `;
