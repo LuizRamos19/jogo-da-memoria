@@ -15,16 +15,21 @@ const flatButton = (function() {
                 height: 176px;
                 text-transform: uppercase;
             }
+            .-sigup {
+                background-color: #f25a70;
+                position: absolute;
+                right: 0;
+            }
         `;
 
         $head.insertAdjacentElement('beforeend', $style);
     };
 
-    module.render = () => {
+    module.render = obj => {
         module._style();
 
         return `
-            <button class="flat-button">Login</button>
+            <button class="${obj.classButton}">${obj.className}</button>
         `;
     };
 
