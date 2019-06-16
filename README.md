@@ -56,3 +56,33 @@ Para deixar as variáveis como privadas para que não seja possível acessar pel
 ```
 (function () {})(); //o parênteses do final executa a função
 ```
+
+`Spread Operator`
+
+O Spread Operator serve para receber n parâmetros em uma função, através de uma única variável declarada com `...` antes de seu nome. A variável recebe os parâmetros e os tranforma em um array.
+
+```
+classe.render($logoCollab, $titleCollab);
+
+module.render = (...$children) => {
+    //
+}
+```
+
+`Regex ou Expressões Regulares`
+
+O motor que lê uma espressão regular é o Regex, entretanto o nome de `Regex` se popularizou e esse nome é mais utilizado do que o nome `Expressão Regular`. O Regex serve para que possamos encontrar padrões em textos, podendo ser utilizado para validações, trocas de palavras, entre outros.
+
+```
+const texto = "Luiz"; //para criar uma regex, basta colocar / /
+const regex = /^Luiz$/; //valida se começa e termina com Luiz
+
+const resultado = regex.test(); //o test serve para testar o regex
+
+Validando um telefone
+
+const texto = "4545-5454"; //para criar uma regex, basta colocar / /
+const regex = /^[0-9][0-9][0-9][0-9] - [0-9][0-9][0-9][0-9]$/; 
+//valida se começa e termina com números e se todos os caracteres são números. A quantidade de números também é validada
+const regex = /^[0-9]{4,5} - [0-9]{4}$/; //forma resumida da regex acima, entretanto, nessa conseguimos colocar limitação de caracteres, neste exemplo, precisa ter no mínimo 4 e máximo 5 no primeiro conjunto antes do traço
+```

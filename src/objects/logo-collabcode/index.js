@@ -35,6 +35,3 @@ const logoCollab = (function() {
         render: module.render
     }
 })();
-
-
-// Parei no video HTML do nosso título

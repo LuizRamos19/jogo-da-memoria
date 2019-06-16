@@ -6,9 +6,12 @@
     const $logoCollab = logoCollab.render();
     const $titleCollab = titleCollab.render("Welcome!");
     const $logoWrapper = logoWrapper.render($logoCollab, $titleCollab);
+    const $labelCollab = labelCollab.render("E-mail");
+    const $inputCollab = inputCollab.render();
 
-    console.log($logoWrapper);
     $root.insertAdjacentHTML('beforeend', $flatButtonLogin);
     $root.insertAdjacentHTML('beforeend', $flatButtonSigup);
     $root.insertAdjacentHTML('beforeend', $logoWrapper);
+    $root.insertAdjacentHTML('beforeend', $labelCollab);
+    $root.insertAdjacentHTML('beforeend', $inputCollab);
 })()
