@@ -15,6 +15,10 @@ const inputCollab = (function() {
                 border-bottom: 2px solid rgba(58, 64, 66, 0.5);
                 padding: 12px 0 12px;
             }
+
+            .input-collabcode + .label-collabcode {  /*esse seletor verifica se o próximo elemento irmão tem a classe indicada, para que possa ser adicionado um margin top apenas quando os elementos indicados estão seguidos*/
+                margin-top: 30px;
+            }
         `;
 
         $head.insertAdjacentElement("beforeend", $style);
