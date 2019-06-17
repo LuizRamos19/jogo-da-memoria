@@ -86,3 +86,11 @@ const regex = /^[0-9][0-9][0-9][0-9] - [0-9][0-9][0-9][0-9]$/;
 //valida se começa e termina com números e se todos os caracteres são números. A quantidade de números também é validada
 const regex = /^[0-9]{4,5} - [0-9]{4}$/; //forma resumida da regex acima, entretanto, nessa conseguimos colocar limitação de caracteres, neste exemplo, precisa ter no mínimo 4 e máximo 5 no primeiro conjunto antes do traço
 ```
+
+`Node`
+
+A expressão programar em Node, utilizando como se fosse uma linguagem de programação está errada, isso porque o Node não é uma linguagem e sim uma plataforma, assim como tomcat é para o Java e apache para o PHP. Programar em Node nada mais é do que programar
+em Javascript para o Back-End.
+
+Para que o Node consiga ler o JS no Back-End, ele faz uso do motor V8. Basicamente o Node é uma plataforma que faz uso de diversas
+APIs para conseguir rodar o JS no Back-End.
