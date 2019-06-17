@@ -94,3 +94,17 @@ em Javascript para o Back-End.
 
 Para que o Node consiga ler o JS no Back-End, ele faz uso do motor V8. Basicamente o Node é uma plataforma que faz uso de diversas
 APIs para conseguir rodar o JS no Back-End.
+
+`NPM`
+
+O `Node Package Manager` é um gerenciador de pacotes que serve para ajudar na instalação de dependências que o nosso projeto irá utilizar.
+
+```
+- npm init              //serve para inicializar o nosso projeto com o npm. Tomar cuidado com tipos de licenças
+```
+
+`Sistema de versão`
+
+No sistema de versão do npm, existem 3 numerais representativos onde cada um significa um tipo de alteração diferente relacionada ao projeto.
+
+1.0.0 //O último número é o `patch` que representa uma pequena alteração no projeto, como correção de bugs, alteração de if para if ternário, etc. Quando esse tipo de alteração ocorre, mudamos o último número da versão. O segundo número é o `minor` que serve para representar uma nova funcionalidade do projeto que não impacta no funcionamento da funcionalidade já existente do mesmo. As vezes é utilizado para correções de bugs extremamente complexos. O primeiro é o `major` que representa uma alteração na forma como o projeto funciona.
