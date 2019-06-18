@@ -24,11 +24,11 @@ const inputCollab = (function() {
         $head.insertAdjacentElement("beforeend", $style);
     }
 
-    module.render = ({placeholder = "", type = "text"}) => {
+    module.render = ({id = "", placeholder = "", type = "text"}) => {
         module._style();
         // pode-se receber o parâmetro como um JSON e realizar o seguinte comando
         // const {placeholder = "", type = "text"} = props;
-        return `<input class="input-collabcode" type=${type} placeholder=${placeholder}>`;
+        return `<input id="${id}" class="input-collabcode" type="${type}" placeholder="${placeholder}">`;
     }
 
     return {

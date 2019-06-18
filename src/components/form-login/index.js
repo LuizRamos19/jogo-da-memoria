@@ -6,8 +6,8 @@ const formLogin = (function() {
         const $usernameInput = inputCollab.render({placeholder: "example@gmail.com"});
 
         const $passwordLabel = labelCollab.render("Password");
-        const $passwordInput = inputCollab.render({placeholder: "******", type: "password"});
-        const $eyeCollab = eyeCollab.render();
+        const $passwordInput = inputCollab.render({id: "password", placeholder: "******", type: "password"});
+        const $eyeCollab = eyeCollab.render({attrFor: "password"});
 
         const $linkCollab = linkCollab.render({href: "#", content: "Forget password?"});
 
@@ -20,7 +20,7 @@ const formLogin = (function() {
             ${$passwordLabel}
             ${$passwordInput}
             ${$eyeCollab}
-            
+
             ${$linkCollab}
 
             ${$btnCollab}

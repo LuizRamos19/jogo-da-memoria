@@ -25,7 +25,7 @@ const linkCollab = (function() {
         module._style();
 
         return `
-            <a class="link-collabcode" href=${href}>${content}</a>
+            <a class="link-collabcode" href="${href}">${content}</a>
         `;
     }
 
