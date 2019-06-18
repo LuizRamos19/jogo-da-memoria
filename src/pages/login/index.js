@@ -1,8 +1,8 @@
-(function(){
+const login = (function(){
     const $root = document.querySelector("#root");
 
-    const $flatButtonLogin = flatButton.render('Login');
-    const $flatButtonSigup = flatButton.render('Sign up', true);
+    const $flatButtonLogin = flatButton.render('Login', true);
+    const $flatButtonSigup = flatButton.render('Sign up', false);
     const $logoCollab = logoCollab.render();
     const $titleCollab = titleCollab.render("Hello!");
     const $logoWrapper = logoWrapper.render($logoCollab, $titleCollab);
@@ -12,4 +12,4 @@
     $root.insertAdjacentHTML('beforeend', $flatButtonSigup);
     $root.insertAdjacentHTML('beforeend', $logoWrapper);
     $root.insertAdjacentHTML('beforeend', $formLogin);
-})();
+});
