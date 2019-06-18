@@ -8,6 +8,8 @@ const formLogin = (function() {
         const $passwordLabel = labelCollab.render("Password");
         const $passwordInput = inputCollab.render({placeholder: "******", type: "password"});
 
+        const $linkCollab = linkCollab.render({href: "#", content: "Forget password?"});
+
         const $btnCollab = btnCollab.render("Login");
 
         return `
@@ -16,6 +18,8 @@ const formLogin = (function() {
 
             ${$passwordLabel}
             ${$passwordInput}
+
+            ${$linkCollab}
 
             ${$btnCollab}
         `;
