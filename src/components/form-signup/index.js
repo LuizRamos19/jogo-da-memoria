@@ -14,7 +14,7 @@ const formSignup = (function() {
         const $confirmPasswordLabel = labelCollab.render("Confirm Password");
         const $confirmPasswordInput = inputCollab.render({placeholder: "******", type: "password"});
 
-        const $btnCollab = btnCollab.render("Submit");
+        const $btnCollab = btnCollab.render({content: "Submit", path: "login"});
 
         return `
             ${$emailLabel}
