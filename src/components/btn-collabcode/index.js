@@ -29,6 +29,7 @@ const btnCollab = (function() {
         event.preventDefault();
 
         window.location.hash = `#/${path}`;
+        location.reload(true);  //o reload aceita apenas um parâmetro boolean, true significa que é para recarregar utilizando o cache e naõ o servidor
     }
 
     module.render = ({content = "", path = ""}) => {

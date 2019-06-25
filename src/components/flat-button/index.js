@@ -28,7 +28,10 @@ const flatButton = (function() {
     };
 
     module.handleClick = path => {
-        // window.location.hash = `#/${path}`;
+        // o href já direciona o hash para a página correta, entretanto, como temos que utilizar o 
+        // location.realod() para recarregar a página, é necessário que coloquemos o hash aqui também
+        window.location.hash = `#/${path}`;
+        location.reload(true);  //o reload aceita apenas um parâmetro boolean, true significa que é para recarregar utilizando o cache e naõ o servidor
     }
 
     module.render = (content = "", active = false, path = "") => {
